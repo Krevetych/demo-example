@@ -1,0 +1,11 @@
+FROM postgres:16 
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+ENV POSTGRES_DB=demo
+
+EXPOSE 5432
+
+# docker network create my-network
+# docker build -t my-pg -f Dockerfile.postgres .
+# docker run --network my-network --name pg-img -d --restart unless-stoped -p 5433:5432 -v $(pwd)/psqldump.sql:/docker-entrypoint-initdb.d/psqldump.sql my-pg
